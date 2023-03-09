@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People list</title>
+</head>
+<body>
+  <ul>
+    {% for people in peoples %}
+      <li>Имя: {{ people.name }}, Почта: {{ people.email }}</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
