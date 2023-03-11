@@ -8,6 +8,11 @@
   <ul>
     {% for people in peoples %}
       <li>Имя: {{ people.name }}, Почта: {{ people.email }}</li>
+      <ul>
+      {% for position in people.positions %}
+        <li>{{ position.title }}</li>
+      {% endfor %}
+      </ul>
     {% endfor %}
   </ul>
 </body>
