@@ -10,9 +10,16 @@ class People(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     phone = db.Column(db.String(20), unique=True)
 
-    def __init__(self, pname, email):
+    def __init__(self, pname, email, phone):
         self.name = pname
         self.email = email
+        self.phone = phone
+
+    def __str__(self):
+        return f'{self.name}'
+
+    def __repr__(self):
+        return f'{self.email}'
 
 
 class Position(db.Model):
