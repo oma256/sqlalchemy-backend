@@ -27,7 +27,6 @@ class Position(db.Model):
     title = db.Column(db.String(80), unique=True)
     description = db.Column(db.String(512))
 
-
     def __init__(self, title, description):
         self.title = title
         self.description = description
@@ -37,3 +36,7 @@ class PeoplePosition(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     people_id = db.Column(db.Integer, db.ForeignKey(People.id))
     position_id = db.Column(db.Integer, db.ForeignKey(Position.id))
+
+    def __init__(self, people_id, position_id):
+        self.people_id = people_id
+        self.position_id = position_id

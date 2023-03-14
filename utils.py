@@ -20,9 +20,10 @@ def init_app(app):
     Migrate(app, db)
 
 
-def json_response(data):
+def json_response(data, status_code=200):
     return Response(
-        json.dumps(data, cls=JSONEncoderCore),
+        response=json.dumps(data, cls=JSONEncoderCore),
+        status=status_code,
         mimetype='application/json; charset=utf-8',
     )
 
